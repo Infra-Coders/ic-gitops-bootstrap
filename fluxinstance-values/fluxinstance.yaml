@@ -27,7 +27,7 @@ spec:
   sync:
     kind: GitRepository
     url: "https://github.com/Infra-Coders/ic-gitops-central.git"
-    ref: "refs/heads/dev-wm"
+    ref: "refs/heads/dev"
     path: "clusters/dev"
   commonMetadata:
     labels:
