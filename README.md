@@ -2,6 +2,12 @@
 InfraCoders Kube GitOps Bootstraping - **Flux**.
 Below documentation is [Flux documentation](https://fluxcd.io/flux/) summary.
 
+## Bootstrap FluxCD
+
+```bash
+./scripts/INSTALL_FLUX.sh
+```
+
 ## How we will use it
 
 At the moment, by default, ic-gitops-central repository will be boostrapped by Flux - clusters/dev directory.
@@ -10,6 +16,7 @@ New references can be configured as GitRepository source, remember to put it in 
 ## Possible Flux repositories structures
 
 Monorepo, repo per environment, repo per team, repo per app [Link](https://fluxcd.io/flux/guides/repository-structure/#repo-per-team).
+
 
 ## Flux Components (ToolKit Components)
 
@@ -49,12 +56,16 @@ Scans image reopsitories and reflects image metadata in Kubernetes sources.
 Image Automation Controller updates yaml files based on the latest images scanned and commits the changes to a given Git repository.
 E.g. one can define a policy, for an image repository, to define version range.
 
+### Source Watcher
+
+Allows new artifacts creation out of other resources.
+
 ## Create GIT repository source
 
 See - [Git Repositories] https://fluxcd.io/flux/components/source/gitrepositories/.
 Put GitRepository Flux manifest in [ic-gitops-central](https://github.com/Infra-Coders/ic-gitops-central) to add new repositories.
 
-### Create PAT  
+### Create PAT
 
 **PAT is not needed for public repositories.**
 
